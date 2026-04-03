@@ -1,0 +1,84 @@
+Naive Bayes Accuracy: 23.46%
+--------------------------------------------------
+                                Song                       Actual                    Predicted  Match
+spotify:track:4OUmlC67FoPLvQNuE5C7kF    National / Civil Conflict       UK Politics / Election  False
+spotify:track:2VsX1BoWSGiuVXGiFSUr6h    National / Civil Conflict Civil Rights / International  False
+spotify:track:42qkSeX6HNJYHxlk6cWoFe       UK Politics / Election                International  False
+spotify:track:6N6He3Wk0q2O0f2LRLrbil                International                International   True
+spotify:track:7JxGM1R32ZqfwZou3VtnTg        UK Politics / Scandal        UK Politics / Scandal   True
+spotify:track:7y1hMqXNa0dKQLZH7CKbUG                International        UK Politics / Scandal  False
+spotify:track:1QQSTB03vIsgjU67UnUPEL       UK Politics / Election       UK Politics / Election   True
+spotify:track:6zsbf8RSb8YODtTclmMgAb        UK Politics / Scandal        UK Politics / Scandal   True
+spotify:track:2NZ2FttCOXIGSLP7F9EvGW                International        UK Politics / Scandal  False
+spotify:track:4401c08DdNwwGEg8WGCkQf       UK Politics / Election          National / Mourning  False
+spotify:track:5ZBeML7Lf3FMEVviTyvi8l        UK Politics / Scandal        UK Politics / Scandal   True
+spotify:track:28FjGYrChzX3TwBcgGVqT5        UK Politics / Scandal                International  False
+spotify:track:7Ho3T7ERfooiAfvODaMQ2N       UK Politics / Election        UK Politics / Scandal  False
+spotify:track:2AsGApoUuN8pTM17Lq9eUd     Social Unrest / Protests          Economic / Politics  False
+spotify:track:27E39dDg0Bx1RzkF3eJJsb        UK Politics / Scandal       UK Politics / Election  False
+spotify:track:2mxByJWOajjiVsLWjNXvDJ    National / Civil Conflict          National / Mourning  False
+spotify:track:7wC4EW11mBVxDK3xdC7FTf       UK Politics / Election       UK Politics / Election   True
+spotify:track:0voUr8lubIafUVJlauJxYF       UK Politics / Election          National / Mourning  False
+spotify:track:0IxxqsYBcCHEQ1HqLYJnwx          National / Mourning                International  False
+spotify:track:2wh66N0HWVzwSB0KV7mdQ5        UK Politics / Scandal                International  False
+spotify:track:2EqlS6tkEnglzr7tkKAAYD    National / Civil Conflict           Science / Cold War  False
+spotify:track:7rgUYidQh5tH0YlXCoKaYJ        UK Politics / Scandal          Economic / Politics  False
+spotify:track:0suLngfo7rJoetk7Ub6N8l    National / Civil Conflict          National / Mourning  False
+spotify:track:5By7Pzgl6TMuVJG168VWzS          National / Mourning Civil Rights / International  False
+spotify:track:1HfRcPdQoV3Qrzvj5sTv43        UK Politics / Scandal                International  False
+spotify:track:6tVFuB5HzRLUlLOSgT3enU        UK Politics / Scandal                International  False
+spotify:track:06ypiqmILMdVeaiErMFA91          National / Mourning       UK Politics / Election  False
+spotify:track:7ds98B8y5BQltzC60Gdkri       UK Politics / Election       UK Politics / Election   True
+spotify:track:2ylCrFiBu98SC0vFfaCent       UK Politics / Election          National / Mourning  False
+spotify:track:25RYJGPnetSkV8le7TeJnR           Science / Cold War Civil Rights / International  False
+spotify:track:2RvKsA6Ho7VbJkVFiD4UQF                International                International   True
+spotify:track:5dpRJkvY8oWMQmQbEQTXhO    National / Civil Conflict        UK Politics / Scandal  False
+spotify:track:2HvTGx5fzFGpHSyRNvXd9T          National / Mourning          National / Mourning   True
+spotify:track:6dGnYIeXmHdcikdzNNDMm2    National / Civil Conflict          Economic / Politics  False
+spotify:track:5SUlhldQJtOhUr2GzH5RI7          National / Mourning          National / Mourning   True
+spotify:track:4dessGxnKXmTbHPhVgqODq                International                International   True
+spotify:track:2EqlS6tkEnglzr7tkKAAYD           Science / Cold War           Science / Cold War   True
+spotify:track:0pNeVovbiZHkulpGeOx1Gj           Science / Cold War          Economic / Politics  False
+spotify:track:4zq4rrfHZeZsTbo5vjJXSV     Social Unrest / Protests                International  False
+spotify:track:4BRkPBUxOYffM2QXVlq7aC       UK Politics / Election          National / Mourning  False
+spotify:track:1h04XMpzGzmAudoI6VHBgA       UK Politics / Election          National / Mourning  False
+spotify:track:3Am0IbOxmvlSXro7N5iSfZ       UK Politics / Election Civil Rights / International  False
+spotify:track:7wJQXHwL3oOllX9iFFg3wJ       UK Politics / Election                International  False
+spotify:track:3tGhRLgcCP6SIZU3tbGl7l       UK Politics / Election     International / Cold War  False
+spotify:track:6tQvjqDIK9GXWIC6mejms8          National / Mourning                International  False
+spotify:track:5Z3Rd1fMcaty8g5Pn7yhBQ Civil Rights / International          National / Mourning  False
+spotify:track:2VmB1rF9FtfKUmFHDVnq8Q        UK Politics / Scandal                International  False
+spotify:track:0CaBBQsaAiRHhiLmzi7ZRp           Science / Cold War        UK Politics / Scandal  False
+spotify:track:2X9H5BokS1u5O46YpNYNsZ     Social Unrest / Protests                International  False
+spotify:track:2B4Y9u4ERAFiMo13XPJyGP       UK Politics / Election Civil Rights / International  False
+spotify:track:0lURiNHmeSMdiOtJmHWpOD        UK Politics / Scandal                International  False
+spotify:track:7hefVXaGsFPesbK6fKwS6F          National / Mourning     International / Cold War  False
+spotify:track:71LsKf3xISiOlY1mj7FFPP Civil Rights / International          Economic / Politics  False
+spotify:track:2CkSHHcBZQXxg90xAcUkhn                International                International   True
+spotify:track:1n8oABN9yti0owTEKcms0q       UK Politics / Election       UK Politics / Election   True
+spotify:track:4nN3sSVDpCqf3TW4tpDBAS                International Civil Rights / International  False
+spotify:track:7Aobt67JnaF7qN8jCCKvHq        UK Politics / Scandal Civil Rights / International  False
+spotify:track:70Dohn82wv6VtxGesqRzbZ          National / Mourning       UK Politics / Election  False
+spotify:track:5jgFfDIR6FR0gvlA56Nakr     Social Unrest / Protests Civil Rights / International  False
+spotify:track:2jtUGFsqanQ82zqDlhiKIp           Science / Cold War          National / Mourning  False
+spotify:track:5i20MCj9bBNGeFUcN1xTk0    National / Civil Conflict          National / Mourning  False
+spotify:track:4jqD06p0XjTw6K4QHo9xSO        UK Politics / Scandal                International  False
+spotify:track:0j3p1p06deJ7f9xmJ9yG22 Civil Rights / International          National / Mourning  False
+spotify:track:3Z25k4ZF6QENy2d9YatsM5    National / Civil Conflict          Economic / Politics  False
+spotify:track:6zsbf8RSb8YODtTclmMgAb                International        UK Politics / Scandal  False
+spotify:track:4A8lVcz8tx8hx5PVEnZTst     Social Unrest / Protests Civil Rights / International  False
+spotify:track:7rgUYidQh5tH0YlXCoKaYJ                International          Economic / Politics  False
+spotify:track:2jAojvUaPoHPFSPpF0UNRo     Social Unrest / Protests          National / Mourning  False
+spotify:track:7iTjGs5z7opNGCXyurs0Q7          National / Mourning          National / Mourning   True
+spotify:track:6j67aNAPeQ31uw4qw4rpLa     Social Unrest / Protests           Science / Cold War  False
+spotify:track:6TjUg1cTUzWHbal6yQAi7c     Social Unrest / Protests    National / Civil Conflict  False
+spotify:track:5Z3Rd1fMcaty8g5Pn7yhBQ     Social Unrest / Protests          National / Mourning  False
+spotify:track:7y1hMqXNa0dKQLZH7CKbUG        UK Politics / Scandal        UK Politics / Scandal   True
+spotify:track:788U1Sqej9M6c4iikuDGxO          National / Mourning                International  False
+spotify:track:53PHRtl7ZP8gkiWiX4rm15        UK Politics / Scandal        UK Politics / Scandal   True
+spotify:track:7fh53ta3vAOGJMQ4i5tCHe        UK Politics / Scandal Civil Rights / International  False
+spotify:track:2CkSHHcBZQXxg90xAcUkhn        UK Politics / Scandal                International  False
+spotify:track:4DZAH8eiqSAkMIE9l5D71U       UK Politics / Election        UK Politics / Scandal  False
+spotify:track:5YrqrCg9WqPyhvIGlpaOst                International        UK Politics / Scandal  False
+spotify:track:3FuRBetiFz4ijeLdGCxQ5Y                International                International   True
+spotify:track:1iJVygVSbCRrJimE79PeDz Civil Rights / International Civil Rights / International   True

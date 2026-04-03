@@ -1,0 +1,196 @@
+---
+title: "Η Μουσική Επανάσταση των Beatles"
+author: "Ioanna Anagnostaki"
+format: docx
+toc: true
+execute:
+  warning: false
+  echo: true
+jupyter: python3
+---
+
+## 1. Εισαγωγή και Σκοπός
+
+Η παρούσα εργασία επιχειρεί μια εις βάθος διερεύνηση της μουσικής πορείας των Beatles κατά την καθοριστική δεκαετία 1962-1970, εξετάζοντας πώς οι ηχητικές τους αναζητήσεις λειτούργησαν ως καταλύτης και ταυτόχρονα ως καθρέφτης της εποχής τους. Μέσω της εφαρμογής προηγμένων τεχνικών εξόρυξης δεδομένων, η μελέτη επικεντρώνεται στους εξής κεντρικούς στόχους:
+
+* **Ανάλυση της Κοινωνικής Επίδρασης**: Διερεύνηση του τρόπου με τον οποίο οι Beatles "έσπασαν τα καλούπια" της εποχής τους, μετασχηματίζοντας το μουσικό τοπίο και ασκώντας βαθιά επιρροή στην πολιτισμική ταυτότητα των 60s.
+* **Συσχέτιση με το Ιστορικό Πλαίσιο**: Χρήση αλγορίθμων για την ανάδειξη της στατιστικής σχέσης μεταξύ των ηχητικών χαρακτηριστικών και των κρίσιμων κοινωνικοπολιτικών γεγονότων της περιόδου.
+* **Αξιολόγηση της Διαχρονικής Ισχύος**: Ποσοτική αποτίμηση της "επιβίωσης" του έργου τους στο σύγχρονο ψηφιακό περιβάλλον, τεκμηριώνοντας πώς οι μουσικές τους καινοτομίες διατηρούν τη δημοτικότητά τους ακόμα και δεκαετίες μετά τη δημιουργία τους.
+
+## 2. Περιγραφή των Δεδομένων
+### 2.1 Datasets
+
+Για την υλοποίηση της έρευνας συνδυάστηκαν δεδομένα από τρεις διαφορετικές πηγές, ώστε να επιτευχθεί μια σφαιρική εικόνα της μουσικής και κοινωνικής πραγματικότητας της δεκαετίας του '60:
+
+* **[The Beatles songs dataset](https://www.kaggle.com/datasets/devedzic/the-beatles-songs-dataset)**: Περιλαμβάνει τα μουσικά χαρακτηριστικά των επιτυχιών του συγκροτήματος.
+* **Social Events Dataset**: Η χειροκίνητη αυτή συλλογή επέτρεψε την απόδοση συγκεκριμένων ετικετών σε κάθε έτος, όπως "Social Unrest / Protests" ή "Science / Cold War", οι οποίες είναι καθοριστικές για την ανάλυση PCA και την κατηγοριοποίηση που ακολουθεί στην εργασία. 
+* **Πηγές:**
+    * [The Times | History & Facts | Britannica](https://www.britannica.com/topic/The-Times)
+    * [History of British newspapers](https://en.wikipedia.org/wiki/History_of_British_newspapers)
+    * [The Daily Mirror History | Adrian Bingham | University of Sheffield](https://gale.com/academic/essays/product/k-r/adrian-bingham-introduction-daily-mirror)
+    * [A History of the Daily Mirror | Historic Newspapers](https://www.historic-newspapers.com/en-gb/blogs/article/daily-mirror-history)
+    * [The Mirror Historical Archive, 1903-2000 | Library](https://library.ed.ac.uk/finding-resources/library-databases/database-includes/includes-b/mirror-historical-archive)
+    * [the BNA](https://www.britishnewspaperarchive.co.uk/search/results/1960-01-01/1969-12-31?retrievecountrycounts=false&newspapertitle=daily%2Bmirror&sortorder=dayearly)
+    * [Daily Mirror Archive](https://www.historic-newspapers.com/en-gb/pages/old-newspapers/daily-mirror-archive?country=GB)
+    * [The daily mirror and the creation of a commercial popular language: A people's war: A people's paper?](https://www.researchgate.net/publication/233349209_The_daily_mirror_and_the_creation_of_a_commercial_popular_language_A_people's_war_A_people's_paper)
+
+
+* **[Spotify Dataset 1921-2020, 160k+ Tracks](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-1921-2020-160k-tracks)**: Χρησιμοποιείται για τη δημιουργία ενός επιπέδου αναφοράς (baseline), συγκρίνοντας τους Beatles με άλλους καλλιτέχνες της περιόδου 1962-1970.
+
+### 2.2 Features
+
+Τα χαρακτηριστικά που επιλέχθηκαν για την ανάλυση (PCA, Clustering, Naive Bayes) είναι τα εξής:
+
+| Χαρακτηριστικό | Περιγραφή |
+|:---|:---|
+| **Energy** | Μέτρο της έντασης και της δραστηριότητας του κομματιού. |
+| **Loudness** | Η συνολική στάθμη του ήχου σε decibels (dB). |
+| **Valence** | Περιγράφει τη μουσική "θετικότητα" (π.χ. χαρούμενος vs λυπημένος ήχος). |
+| **Danceability** | Πόσο κατάλληλο είναι ένα κομμάτι για χορό βάσει ρυθμού και σταθερότητας. |
+| **Acousticness** | Μέτρο που δείχνει αν το κομμάτι βασίζεται σε φυσικά (ακουστικά) όργανα. |
+| **Popularity** | Η τρέχουσα δημοτικότητα του τραγουδιού στην πλατφόρμα Spotify. |
+
+## 3. Εφαρμογή Αλγόριθμων 
+### 3.1 Προετοιμασία και Καθαρισμός Δεδομένων
+Πριν την ανάλυση, είναι απαραίτητο να ενοποιηθούν τα δεδομένα (merge) και να κανονικοποιηθούν (scaling). Η κανονικοποίηση εξασφαλίζει ότι μεταβλητές με διαφορετικές κλίμακες (π.χ. Loudness σε dB και Energy από 0 έως 1) θα έχουν την ίδια βαρύτητα στους αλγορίθμους.
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+from sklearn.naive_bayes import GaussianNB
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import silhouette_score
+
+# Φόρτωση και Καθαρισμός 
+df_beatles = pd.read_csv('beatles_songs.csv')
+df_social = pd.read_csv('social_events.csv')
+df_beatles.columns = df_beatles.columns.str.strip().str.lower()
+df_social.columns = df_social.columns.str.strip().str.lower()
+df_beatles['year'] = pd.to_numeric(df_beatles['year'], errors='coerce')
+df_social['year'] = pd.to_numeric(df_social['year'], errors='coerce')
+df_merged = pd.merge(df_beatles, df_social, on='year')
+
+# Spotify Baseline 
+use_cols = ['valence', 'year', 'energy', 'loudness', 'artists', 'popularity', 'danceability', 'acousticness']
+df_spotify = pd.read_csv('data.csv', usecols=use_cols, encoding='ISO-8859-1')
+df_baseline = df_spotify[(df_spotify['year'] >= 1962) & (df_spotify['year'] <= 1970)].copy()
+df_baseline = df_baseline[~df_baseline['artists'].str.contains('The Beatles', case=False)]
+
+# Scaling 
+features = ['energy', 'loudness', 'valence', 'danceability', 'acousticness']
+X_scaled = StandardScaler().fit_transform(df_merged[features])
+y_main = df_merged['label']
+```
+### 3.2 Ανάλυση PCA
+Η μέθοδος PCA χρησιμοποιείται για να μειώσουμε τη διαστασιμότητα των μουσικών χαρακτηριστικών σε δύο κύριες συνιστώσες (PC1, PC2). Αυτό μας επιτρέπει να οπτικοποιήσουμε τη "μουσική διαδρομή" των Beatles και να δούμε αν τα τραγούδια που γράφτηκαν κάτω από παρόμοιες κοινωνικές συνθήκες εμφανίζουν κοινά ηχητικά μοτίβα. Η διαδικασία βασίζεται στον πίνακα συνδιακύμανσης $\Sigma$:
+
+$$\Sigma = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(x_i - \bar{x})^T$$
+
+```{python}
+#| label: fig-pca
+#| fig-cap: "2D PCA: Η Μουσική Διαδρομή των Beatles βάσει Κοινωνικών Γεγονότων"
+
+pca_2d = PCA(n_components=2)
+X_pca = pca_2d.fit_transform(X_scaled)
+
+plt.figure(figsize=(10, 6))
+for label in df_merged['label'].unique():
+    mask = df_merged['label'] == label
+    plt.scatter(X_pca[mask, 0], X_pca[mask, 1], label=label, alpha=0.7)
+
+plt.title('2D PCA: Μουσική Εξέλιξη vs Κοινωνικό Κλίμα')
+plt.xlabel('PC1')
+plt.ylabel('PC2')
+plt.legend(title='Social Label', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.show()
+       #Εκτύπωση Συγκεκριμένων Παραδειγμάτων: Τίτλος Τραγουδιού & Τίτλος Εφημερίδας
+print("ΣΥΝΔΕΣΗ ΜΟΥΣΙΚΗΣ & ΙΣΤΟΡΙΚΩΝ ΠΡΩΤΟΣΕΛΙΔΩΝ")
+       # Μετά το merge, το 'title_x' είναι το τραγούδι και το 'title_y' είναι η εφημερίδα
+song_col = 'title_x'
+news_col = 'title_y'
+       # Επιλέγουμε αντιπροσωπευτικά παραδείγματα από διαφορετικές κοινωνικές ετικέτες
+examples = df_merged.drop_duplicates(subset=[song_col]).groupby('label').head(1)
+
+for _, row in examples.iterrows():
+    print(f"Τραγούδι: {row[song_col]} ({int(row['year'])})")
+    print(f"Τίτλος Εφημερίδας: {row[news_col]}")
+    print(f"Κοινωνική Κατηγορία: {row['label']}")
+    print("-" * 60)
+```
+### 3.3 Κατηγοριοποίηση Naive Bayes
+Εφαρμόζουμε τον αλγόριθμο Naive Bayes για να εξετάσουμε αν τα μουσικά χαρακτηριστικά ενός τραγουδιού επαρκούν για να "προβλέψουμε" το κοινωνικό label της εποχής του.
+
+```{python}
+possible_titles = ['title', 'name', 'song', 'track', 'title_x', 'name_x']
+title_col = next((col for col in possible_titles if col in df_merged.columns), None)
+
+if title_col is None:
+    title_col = df_merged.select_dtypes(include=['object']).columns[0]
+
+# Split με τη σωστή στήλη
+X_train, X_test, y_train, y_test, t_train, t_test = train_test_split(X_scaled, y_main, df_merged[title_col], test_size=0.20, random_state=42
+)
+
+nb = GaussianNB().fit(X_train, y_train)
+print(f"Χρησιμοποιήθηκε η στήλη: '{title_col}'")
+print(f"Naive Bayes Accuracy: {nb.score(X_test, y_test):.2%}")
+```
+### 3.4 Ομαδοποίηση K-means (Clustering)
+Χρησιμοποιούμε τον K-means για να ανακαλύψουμε "μουσικές περιόδους" χωρίς να λάβουμε υπόψη τα έτη. Η ποιότητα της ομαδοποίησης ελέγχεται με το Silhouette Score.
+
+$$s(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}$$
+
+```{python}
+#| label: fig-cluster
+#| fig-cap: "K-means Clustering των Τραγουδιών (Stability Analysis)"
+
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+clusters = kmeans.fit_predict(X_scaled)
+
+plt.figure(figsize=(10, 6))
+plt.scatter(X_pca[:, 0], X_pca[:, 1], c=clusters, cmap='viridis', s=50)
+plt.title('K-means Clustering: Μουσικές Περίοδοι')
+plt.colorbar(label='Cluster ID')
+plt.show()
+
+print(f"Silhouette Score: {silhouette_score(X_scaled, clusters):.3f}")
+```
+### 3.5 Διαχρονικό Influence
+Συγκρίνουμε τη μέση δημοτικότητα των Beatles στο Spotify με άλλους καλλιτέχνες των 60s. Αυτό μας επιτρέπει να αξιολογήσουμε τη διαχρονικότητα της "μουσικής επανάστασης" σε σχέση με το baseline της εποχής.
+```{python}
+#| label: fig-influence
+#| fig-cap: "Σύγκριση Μέσης Δημοτικότητας (Beatles vs Others 60s)"
+
+labels = ['Beatles', 'Others (60s)']
+means = [df_beatles['popularity'].mean(), df_baseline['popularity'].mean()]
+
+plt.figure(figsize=(8, 5))
+plt.bar(labels, means, color=['navy', 'gray'])
+plt.ylabel('Μέση Δημοτικότητα στο Spotify')
+plt.show()
+```
+## 4. Συμπεράσματα και Σχολιασμός
+
+Η ανάλυση εξόρυξης δεδομένων επιτρέπει την εξαγωγή κρίσιμων συμπερασμάτων, τεκμηριώνοντας πώς οι Beatles λειτούργησαν ως το "soundtrack" μιας ολόκληρης εποχής:
+
+* **Πώς οι Beatles "Έσπασαν τα Καλούπια"** 
+Η ομαδοποίηση **K-means (3.4)** επιβεβαίωσε ότι το συγκρότημα δεν είχε κάποιο πατρόν. Ο διαχωρισμός σε 3 στατιστικά διακριτά clusters δείχνει την εξέλιξη από τον απλό ήχο της Beatlemania στην πειραματική ωριμότητα. Η σταθερότητα της ομαδοποίησης ($Silhouette Score: 0.242$) αποδεικνύει ότι οι Beatles "έσπαγαν" συνειδητά τα καλούπια της εποχής τους κάθε λίγα χρόνια, δημιουργώντας νέες μουσικές τάσεις αντί να τις ακολουθούν.
+
+* **Η Μουσική ως Καθρέφτης της Ιστορίας**
+Η ανάλυση **PCA (3.2)** και ο αλγόριθμος **Naive Bayes** απέδειξαν τη στενή σχέση μεταξύ ήχου και κοινωνικού κλίματος. 
+Παρατηρήσαμε ότι τραγούδια όπως το **"Across the universe"** (1968) συμπίπτουν χρονολογικά με πρωτοσέλιδα όπως το **"BATTLE OF GROSVENOR SQUARE"**. 
+Η αυξημένη ενέργεια (Energy) και η ένταση (Loudness) αυτής της περιόδου, σε σύγκριση με την "αθωότητα" του 1963 (π.χ. "I Want to Hold Your Hand"), δείχνει ότι οι Beatles μετέφρασαν την πολιτική ένταση σε ηχητική καινοτομία. 
+Η ικανότητα του Naive Bayes να ταυτοποιεί την περίοδο βάσει των audio features επιβεβαιώνει ότι η μουσική τους ήταν ένας "δυναμικός καθρέφτης" της ιστορίας.
+
+* **Η Διαχρονική Επίπτωση: 1964 vs 2024**
+Η σύγκριση με το baseline της δεκαετίας του '60 στο **Figure 3** αποκαλύπτει το μέγεθος της επιρροής τους. Ενώ ο μέσος καλλιτέχνης της εποχής έχει σήμερα δημοτικότητα **28**, οι Beatles διατηρούν το εντυπωσιακό **50**. Αυτό σημαίνει ότι ένα νούμερο 1 του 1964 παραμένει επίκαιρο και εμπορικό. Η "επανάσταση" των Beatles δεν ήταν προσωρινή· οι καινοτομίες τους στην παραγωγή και τη σύνθεση δημιούργησαν έναν ήχο που "αντέχει" στο χρόνο, υπερβαίνοντας το baseline της εποχής τους.
+
+**Τελική Αξιολόγηση:** Η εργασία απέδειξε ότι η Εξόρυξη Δεδομένων μπορεί να αναδείξει κρυμμένα μοτίβα σε καλλιτεχνικά έργα. Οι Beatles δεν ήταν απλώς ένα δημοφιλές συγκρότημα, αλλά μια καλλιτεχνική οντότητα που εξελίχθηκε παράλληλα με την κοινωνία, αφήνοντας μια ανεξίτηλη ηχητική υπογραφή που παραμένει στατιστικά υπερέχουσα μέχρι σήμερα.
+
+
+

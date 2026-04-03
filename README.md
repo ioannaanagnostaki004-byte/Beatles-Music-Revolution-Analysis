@@ -4,6 +4,7 @@ This project explores the musical evolution of The Beatles between 1962 and 1970
 
 ## Data Sources
 * **The Beatles Songs Dataset:** [Kaggle - Beatles Songs Dataset](https://www.kaggle.com/datasets/devedzic/the-beatles-songs-dataset)
+* **Spotify Dataset 1921-2020, 160k+ Tracks:** [Kaggle - Spotify Dataset](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-1921-2020-160k-tracks)
 * **Social Events Dataset:** Custom curated dataset mapping significant 1960s socio-political events.
 
 ## Project Overview
